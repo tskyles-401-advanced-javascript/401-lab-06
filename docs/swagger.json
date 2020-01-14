@@ -1,0 +1,171 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Lab 06",
+    "description": "practice API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "paths": {
+    "/categories": {
+      "get": {
+        "description": "Get all categories",
+        "responses": {
+          "200": {
+            "description": "Returned a list of categories",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/getAll"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new category",
+        "responses": {
+          "200": {
+            "description": "Category created successfully"
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "description": "Get a specific item",
+        "parameters": [
+          {
+            "name":"id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved item",
+            "content": {
+              "*/*": {
+                "schema": {
+                  $ref: "#/components/schemas/getOne"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update category",
+        "parameters": [
+          {
+            "name":"id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully updated category"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete category",
+        "parameters": [
+          {
+            "name":"id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deleted category"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "description": "Get all products",
+        "responses": {
+          "200": {
+            "description": "Returned a list of products",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/getAll"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new category",
+        "responses": {
+          "200": {
+            "description": "Category created successfully"
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "description": "Get a specific item",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved item"
+          }
+        }
+      },
+      "put": {
+        "description": "Update products",
+        "responses": {
+          "200": {
+            "description": "Successfully updated products"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete products",
+        "responses": {
+          "200": {
+            "description": "Successfully deleted products"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "getAll": {
+        "type": "object",
+        "example": [
+          "{ name: food1 }",
+          "{ name: food2 }"
+        ]
+      },
+      "getOne": {
+        "type": "object",
+        "example": [
+          "{ name: food1 }"  
+        ]
+      }
+    }
+  }
+}
