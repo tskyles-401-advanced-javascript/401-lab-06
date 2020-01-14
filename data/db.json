@@ -1,0 +1,38 @@
+{
+  "categories": [
+    { 
+      "_id": 1,
+      "name": "laptops",
+      "display_name": "laptops",
+      "description":"laptop computers" 
+    },
+        { 
+      "_id": 2,
+      "name": "food",
+      "display_name": "food",
+      "description":"food products" 
+    },
+        { 
+      "_id": 3,
+      "name": "clothes",
+      "display_name": "clothes",
+      "description":"clothes products" 
+    }
+  ],
+  "products": [
+    {
+      "_id":1,
+      "category": "laptops",
+      "name": "lenovo laptop",
+      "display_name": "lenovo_laptop",
+      "description": "lenovo ideapad" 
+    },
+    {
+      "_id":2,
+      "category": "food",
+      "name": "potato",
+      "display_name": "potato",
+      "description": "potato" 
+    }
+  ]
+}
