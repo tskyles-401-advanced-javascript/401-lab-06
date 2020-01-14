@@ -1,99 +1,77 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "lab06",
+    "title": "Lab 06",
     "description": "practice API",
-    "version": "0.1"
+    "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000/"
     }
   ],
   "paths": {
-    "/": {
-      "get": {
-        "description": "get all work",
-        "responses": {
-          "200": {
-            "description": "Auto generated using Swagger Inspector",
-            "content": {
-              "text/html; charset=UTF-8": {
-                "schema": {
-                  "type": "string"
-                },
-                "examples": {}
-              }
-            }
-          }
-        },
-        "servers": [
-          {
-            "url": "http://localhost:3000"
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "http://localhost:3000"
-        }
-      ]
-    },
     "/categories": {
       "get": {
-        "description": "Get categories",
+        "description": "Get all categories",
         "responses": {
           "200": {
-            "description": "Auto generated using Swagger Inspector",
+            "description": "Returned a list of categories",
             "content": {
-              "application/json; charset=utf-8": {
+              "*/*": {
                 "schema": {
-                  "type": "string"
-                },
-                "examples": {}
+                  "$ref": "#/components/schemas/getAll"
+                }
               }
             }
           }
-        },
-        "servers": [
-          {
-            "url": "http://localhost:3000"
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "http://localhost:3000"
         }
-      ]
+      },
+      "post": {
+        "description": "Create a new category",
+        "responses": {
+          "200": {
+            "description": "Category created successfully"
+          }
+        }
+      }
     },
-    "/products": {
+    "/categories/{id}": {
       "get": {
-        "description": "Get products",
+        "description": "Get a specific item",
         "responses": {
           "200": {
-            "description": "Auto generated using Swagger Inspector",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "type": "string"
-                },
-                "examples": {}
-              }
-            }
+            "description": "Successfully retrieved item"
           }
-        },
-        "servers": [
-          {
-            "url": "http://localhost:3000"
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "http://localhost:3000"
         }
-      ]
+      },
+      "put": {
+        "description": "Update category",
+        "responses": {
+          "200": {
+            "description": "Successfully updated category"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete category",
+        "responses": {
+          "200": {
+            "description": "Successfully deleted category"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "getAll": {
+        "type": "object",
+        "example": [
+          "{}",
+          "{}"
+        ]
+      }
     }
   }
 }
