@@ -5,7 +5,7 @@
 ### Author: Travis Skyles
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
+* [submission PR](https://github.com/tskyles-401-advanced-javascript/401-lab-06/pull/1)
 
 #### Documentation
 * [api docs](http://xyz.com/api-docs) (API servers)
