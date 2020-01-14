@@ -6,13 +6,13 @@
       "display_name": "laptops",
       "description":"laptop computers" 
     },
-        { 
+    { 
       "_id": 2,
       "name": "food",
       "display_name": "food",
       "description":"food products" 
     },
-        { 
+    { 
       "_id": 3,
       "name": "clothes",
       "display_name": "clothes",
